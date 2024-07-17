@@ -32,16 +32,25 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
                       widget.restaurant.name,
                       style: GoogleFonts.roboto(fontSize: 24, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 10),
-                    Text(
-                      'Детали ресторана ${widget.restaurant.name}',
-                      style: GoogleFonts.roboto(fontSize: 16),
+                    Image.asset(widget.restaurant.image, fit: BoxFit.cover,),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Адрес: ${widget.restaurant.address}',
+                          style: GoogleFonts.roboto(fontSize: 16),
+                        ),
+                        IconButton(onPressed: (){}, icon: Icon(Icons.map_rounded))
+                      ],
                     ),
                   ],
                 ),
