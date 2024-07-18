@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_ordering_app/screens/profile_screen.dart';
 import 'package:music_ordering_app/screens/restaurant_list_screen.dart';
+import 'package:music_ordering_app/screens/map_screen.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -16,6 +17,7 @@ class _AppState extends State<App> {
 
   final List<Widget> _screens = [
     RestaurantListScreen(),
+    MapScreen(), // добавили MapScreen
     ProfileScreen(),
   ];
 
@@ -33,12 +35,17 @@ class _AppState extends State<App> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: "Home",
+            label: "Рестораны",
             backgroundColor: Colors.blue,
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.map),
+            label: "Карта",
+            backgroundColor: Colors.red,
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: "Profile",
+            label: "Профиль",
             backgroundColor: Colors.green,
           ),
         ],
@@ -50,4 +57,3 @@ class _AppState extends State<App> {
     );
   }
 }
-

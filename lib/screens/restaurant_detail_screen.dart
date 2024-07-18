@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:music_ordering_app/models/restaurant.dart';
+import 'package:music_ordering_app/screens/restaurant_music_screen.dart';
 
 class RestaurantDetailScreen extends StatefulWidget {
   const RestaurantDetailScreen({super.key, required this.restaurant});
@@ -59,7 +60,7 @@ class _RestaurantDetailScreenState extends State<RestaurantDetailScreen> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/restaurantMusic', arguments: widget.restaurant.name);
+                Navigator.push(context, MaterialPageRoute(builder:(context) => RestaurantMusicScreen(restaurantName: widget.restaurant.name,) ,));
               },
               style: ElevatedButton.styleFrom(
                 shape: RoundedRectangleBorder(

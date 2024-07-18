@@ -3,9 +3,6 @@
 import 'package:flutter/material.dart';
 import 'app.dart';
 import 'screens/profile_screen.dart';
-import 'screens/restaurant_list_screen.dart';
-import 'screens/restaurant_music_screen.dart';
-import 'screens/music_order_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,9 +27,6 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       routes: {
         '/':(context)=>App(),
-        '/restaurantListScreen': (context) => RestaurantListScreen(),
-        '/restaurantMusic': (context) => RestaurantMusicScreen(),
-        '/musicOrder': (context) => MusicOrderScreen(),
         '/profile':(context)=>ProfileScreen()
       },
     );
